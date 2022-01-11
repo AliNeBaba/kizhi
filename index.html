@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <title>Проживи год на острове Кижи</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Остров Кижи" />
+        <meta name="author" content="Андрей Липириди" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+
+        <!-- Основной блок игрового поля -->
+        <div class="container">    
+            <div id="main-page">
+                <img id="main-background-image" src="media/imgs/main-summer.png">
+                
+                <!-- Интерфейс игроков с элементами -->
+                <div id="interface-krestyanin">
+                    <img src="media/imgs/interface-krestyanin.png">
+                    
+                    <img id="krestyanin-name-soha" src="media/imgs/name-soha.png">
+                    <img id="krestyanin-name-borona" src="media/imgs/name-borona.png">
+                    <img id="krestyanin-name-sevalka" src="media/imgs/name-sevalka.png">
+                    <img id="krestyanin-name-coporuga" src="media/imgs/name-coporuga.png">
+                    <img id="krestyanin-name-gorbusha" src="media/imgs/name-gorbusha.png">
+                    <img id="krestyanin-name-vily" src="media/imgs/name-vily.png">
+                    <img id="krestyanin-name-cep" src="media/imgs/name-cep.png">
+
+                    <img id="krestyanin-img-soha" src="media/imgs/img-soha.png">
+                    <img id="krestyanin-img-borona" src="media/imgs/img-borona.png">
+                    <img id="krestyanin-img-sevalka" src="media/imgs/img-sevalka.png">
+                    <img id="krestyanin-img-coporuga" src="media/imgs/img-coporuga.png">
+                    <img id="krestyanin-img-gorbusha" src="media/imgs/img-gorbusha.png">
+                    <img id="krestyanin-img-vily" src="media/imgs/img-vily.png">
+                    <img id="krestyanin-img-cep" src="media/imgs/img-cep.png">
+                </div>
+
+                <div id="interface-pryaha">
+                    <img src="media/imgs/interface-pryaha.png">
+
+                    <img id="pryaha-name-cudel" src="media/imgs/name-cudel.png">
+                    <img id="pryaha-name-pryalka" src="media/imgs/name-pryalka.png">
+                    <img id="pryaha-name-vereteno" src="media/imgs/name-vereteno.png">
+                    <img id="pryaha-name-motoguz" src="media/imgs/name-motoguz.png">
+                    <img id="pryaha-name-spica" src="media/imgs/name-spica.png">
+                    <img id="pryaha-name-parus" src="media/imgs/name-parus.png">
+                    <img id="pryaha-name-gorbusha" src="media/imgs/name-gorbusha.png">
+                    <img id="pryaha-name-serp" src="media/imgs/name-serp.png">
+                    <img id="pryaha-name-lodka-ves" src="media/imgs/name-lodka-ves.png">
+                    <img id="pryaha-name-grabli" src="media/imgs/name-grabli.png">
+
+                    <img id="pryaha-img-cudel" src="media/imgs/img-cudel.png">
+                    <img id="pryaha-img-pryalka" src="media/imgs/img-pryalka.png">
+                    <img id="pryaha-img-vereteno" src="media/imgs/img-vereteno.png">
+                    <img id="pryaha-img-motoguz" src="media/imgs/img-motoguz.png">
+                    <img id="pryaha-img-spica" src="media/imgs/img-spica.png">
+                    <img id="pryaha-img-parus" src="media/imgs/img-parus.png">
+                    <img id="pryaha-img-gorbusha" src="media/imgs/img-gorbusha.png">
+                    <img id="pryaha-img-serp" src="media/imgs/img-serp.png">
+                    <img id="pryaha-img-lodka" src="media/imgs/img-lodka.png">
+                    <img id="pryaha-img-cow" src="media/imgs/img-cow.png">
+                    <img id="pryaha-img-grabli" src="media/imgs/img-grabli.png">
+                </div>
+                
+                <div id="interface-lodochnik">
+                    <img src="media/imgs/interface-lodochnik.png">
+
+                    <img id="lodochnik-name-pila" src="media/imgs/name-pila.png">
+                    <img id="lodochnik-name-topor" src="media/imgs/name-topor.png">
+                    <img id="lodochnik-name-rubanok" src="media/imgs/name-rubanok.png">
+                    <img id="lodochnik-name-stameska" src="media/imgs/name-stameska.png">
+                    <img id="lodochnik-name-lodka" src="media/imgs/name-lodka.png">
+                    <img id="lodochnik-name-yakor" src="media/imgs/name-yakor.png">
+                    <img id="lodochnik-name-vesla" src="media/imgs/name-vesla.png">
+
+                    <img id="lodochnik-img-pila" src="media/imgs/img-pila.png">
+                    <img id="lodochnik-img-topor" src="media/imgs/img-topor.png">
+                    <img id="lodochnik-img-rubanok" src="media/imgs/img-rubanok.png">
+                    <img id="lodochnik-img-stameska" src="media/imgs/img-stameska.png">
+                    <img id="lodochnik-img-lodka" src="media/imgs/img-lodka.png">
+                    <img id="lodochnik-img-yakor" src="media/imgs/img-yakor.png">
+                    <img id="lodochnik-img-vesla" src="media/imgs/img-vesla.png">
+                </div>
+
+                <!-- Элементы игрового поля -->
+                <img class="pointer" id="img-soha" src="media/imgs/img-soha.png" onclick="soundClick('select_item'); select('soha');">
+                <img class="pointer" id="img-borona" src="media/imgs/img-borona.png" onclick="soundClick('select_item'); select('borona');">
+                <img class="pointer" id="img-sevalka" src="media/imgs/img-sevalka.png" onclick="soundClick('select_item'); select('sevalka');">
+                <img class="pointer" id="img-coporuga" src="media/imgs/img-coporuga.png" onclick="soundClick('select_item'); select('coporuga');">
+                <img class="pointer" id="img-gorbusha" src="media/imgs/img-gorbusha.png" onclick="soundClick('select_item'); select('gorbusha');">
+                <img class="pointer" id="img-vily" src="media/imgs/img-vily.png" onclick="soundClick('select_item'); select('vily');">
+                <img class="pointer" id="img-cep" src="media/imgs/img-cep.png" onclick="soundClick('select_item'); select('cep');">
+                <img class="pointer" id="img-cudel" src="media/imgs/img-cudel.png" onclick="soundClick('select_item'); select('cudel');">
+                <img class="pointer" id="img-pryalka" src="media/imgs/img-pryalka.png" onclick="soundClick('select_item'); select('pryalka');">
+                <img class="pointer" id="img-vereteno" src="media/imgs/img-vereteno.png" onclick="soundClick('select_item'); select('vereteno');">
+                <img class="pointer" id="img-motoguz" src="media/imgs/img-motoguz.png" onclick="soundClick('select_item'); select('motoguz');">
+                <img class="pointer" id="img-spica" src="media/imgs/img-spica.png" onclick="soundClick('select_item'); select('spica');">
+                <img class="pointer" id="img-parus" src="media/imgs/img-parus.png" onclick="soundClick('select_item'); select('parus');">
+                <img class="pointer" id="img-serp" src="media/imgs/img-serp.png" onclick="soundClick('select_item'); select('serp');">
+                <img class="pointer" id="img-grabli" src="media/imgs/img-grabli.png" onclick="soundClick('select_item'); select('grabli');">
+                <img class="pointer" id="img-pila" src="media/imgs/img-pila.png" onclick="soundClick('select_item'); select('pila');">
+                <img class="pointer" id="img-topor" src="media/imgs/img-topor.png" onclick="soundClick('select_item'); select('topor');">
+                <img class="pointer" id="img-rubanok" src="media/imgs/img-rubanok.png" onclick="soundClick('select_item'); select('rubanok');">
+                <img class="pointer" id="img-stameska" src="media/imgs/img-stameska.png" onclick="soundClick('select_item'); select('stameska');">
+                <img class="pointer" id="img-lodka" src="media/imgs/img-lodka.png" onclick="soundClick('select_item'); select('lodka');">
+                <img class="pointer" id="img-yakor" src="media/imgs/img-yakor.png" onclick="soundClick('select_item'); select('yakor');">
+                <img class="pointer" id="img-vesla" src="media/imgs/img-vesla.png" onclick="soundClick('select_item'); select('vesla');">
+                <img class="pointer" id="img-cow" src="media/imgs/img-cow.png" onclick="soundClick('select_item'); select('cow');">
+
+                <!-- Мигающие звезды-подсказки -->
+                <div id="star-soha"></div>
+                <div id="star-borona"></div>
+                <div id="star-sevalka"></div>
+                <div id="star-coporuga"></div>
+                <div id="star-gorbusha"></div>
+                <div id="star-vily"></div>
+                <div id="star-cep"></div>
+                <div id="star-cudel"></div>
+                <div id="star-pryalka"></div>
+                <div id="star-vereteno"></div>
+                <div id="star-motoguz"></div>
+                <div id="star-spica"></div>
+                <div id="star-parus"></div>
+                <div id="star-serp"></div>
+                <div id="star-grabli"></div>
+                <div id="star-pila"></div>
+                <div id="star-topor"></div>
+                <div id="star-rubanok"></div>
+                <div id="star-stameska"></div>
+                <div id="star-lodka"></div>
+                <div id="star-yakor"></div>
+                <div id="star-vesla"></div>
+                <div id="star-cow"></div>
+                
+                <!-- Подписи к элементам игрового поля -->
+                <img id="title-soha" src="media/imgs/title-soha.png">
+                <img id="title-borona" src="media/imgs/title-borona.png">
+                <img id="title-sevalka" src="media/imgs/title-sevalka.png">
+                <img id="title-coporuga" src="media/imgs/title-coporuga.png">
+                <img id="title-gorbusha" src="media/imgs/title-gorbusha.png">
+                <img id="title-vily" src="media/imgs/title-vily.png">
+                <img id="title-cep" src="media/imgs/title-cep.png">
+                <img id="title-cudel" src="media/imgs/title-cudel.png">
+                <img id="title-pryalka" src="media/imgs/title-pryalka.png">
+                <img id="title-vereteno" src="media/imgs/title-vereteno.png">
+                <img id="title-motoguz" src="media/imgs/title-motoguz.png">
+                <img id="title-spica" src="media/imgs/title-spica.png">
+                <img id="title-parus" src="media/imgs/title-parus.png">
+                <img id="title-serp" src="media/imgs/title-serp.png">
+                <img id="title-grabli" src="media/imgs/title-grabli.png">
+                <img id="title-pila" src="media/imgs/title-pila.png">
+                <img id="title-topor" src="media/imgs/title-topor.png">
+                <img id="title-rubanok" src="media/imgs/title-rubanok.png">
+                <img id="title-stameska" src="media/imgs/title-stameska.png">
+                <img id="title-lodka" src="media/imgs/title-lodka.png">
+                <img id="title-yakor" src="media/imgs/title-yakor.png">
+                <img id="title-vesla" src="media/imgs/title-vesla.png">
+                <img id="title-cow" src="media/imgs/title-cow.png">
+                <img id="title-lodka-ves" src="media/imgs/title-lodka-ves.png">
+
+                <!-- Календарь с элементами -->
+                <div id="calendar-box">
+                    <img src="media/imgs/calendar-background.png">
+
+                    <img id="calendar" src="media/imgs/calendar.png">
+                    <img id="calendar-strelka" src="media/imgs/calendar-strelka.png">
+                    
+                    <img class="active holidays" id="winter-paskha" src="media/imgs/winter-paskha.png">
+                    <img class="active holidays" id="spring-blagoveshenie" src="media/imgs/spring-blagoveshenie.png">
+                    <img class="active holidays" id="spring-egory" src="media/imgs/spring-egory.png">
+                    <img class="active holidays" id="spring-nicola" src="media/imgs/spring-nicola.png">
+                    <img class="active holidays" id="spring-alena" src="media/imgs/spring-alena.png">
+                    <img class="active holidays" id="spring-eremey" src="media/imgs/spring-eremey.png">
+                    <img class="active holidays" id="summer-piter-day" src="media/imgs/summer-piter-day.png">
+                    <img class="active holidays" id="summer-ilyin-day" src="media/imgs/summer-ilyin-day.png">
+                    <img class="active holidays" id="autumn-spas" src="media/imgs/autumn-spas.png">
+                    <img class="active holidays" id="autumn-uspenie" src="media/imgs/autumn-uspenie.png">
+                    <img class="active holidays" id="autumn-sdvizhenie" src="media/imgs/autumn-sdvizhenie.png">
+                    <img class="active holidays" id="winter-pokrov" src="media/imgs/winter-pokrov.png">
+                    <img class="active holidays" id="winter-mikhailov-day" src="media/imgs/winter-mikhailov-day.png">
+                    <img class="active holidays" id="winter-filipov-day" src="media/imgs/winter-filipov-day.png">
+                    <img class="active holidays" id="winter-rozhdestvo" src="media/imgs/winter-rozhdestvo.png">
+                    <img class="active holidays" id="winter-kreshenie" src="media/imgs/winter-kreshenie.png">
+                    <img class="active holidays" id="winter-maslenica" src="media/imgs/winter-maslenica.png">
+                    
+                    
+                </div>
+
+                <!-- Информация о праздниках -->
+                
+                <img class="info-holidays" id="holiday-paskha" src="media/imgs/holiday-paskha.png">
+                <img class="info-holidays" id="holiday-blagoveschanie" src="media/imgs/holiday-blagoveschanie.png">
+                <img class="info-holidays" id="holiday-egory" src="media/imgs/holiday-egory.png">
+                <img class="info-holidays" id="holiday-nikola" src="media/imgs/holiday-nikola.png">
+                <img class="info-holidays" id="holiday-alena" src="media/imgs/holiday-alena.png">
+                <img class="info-holidays" id="holiday-eremey" src="media/imgs/holiday-eremey.png">
+                <img class="info-holidays" id="holiday-piter-day" src="media/imgs/holiday-piter-day.png">
+                <img class="info-holidays" id="holiday-ilyin-day" src="media/imgs/holiday-ilyin-day.png">
+                <img class="info-holidays" id="holiday-spas" src="media/imgs/holiday-spas.png">
+                <img class="info-holidays" id="holiday-uspenie" src="media/imgs/holiday-uspenie.png">
+                <img class="info-holidays" id="holiday-sdvizhenie" src="media/imgs/holiday-sdvizhenie.png">
+                <img class="info-holidays" id="holiday-pokrov" src="media/imgs/holiday-pokrov.png">
+                <img class="info-holidays" id="holiday-mikhailov-day" src="media/imgs/holiday-mikhailov-day.png">
+                <img class="info-holidays" id="holiday-filipov-day" src="media/imgs/holiday-filipov-day.png">
+                <img class="info-holidays" id="holiday-rozhdestvo" src="media/imgs/holiday-rozhdestvo.png">
+                <img class="info-holidays" id="holiday-kreschenie" src="media/imgs/holiday-kreschenie.png">
+                <img class="info-holidays" id="holiday-maslenica" src="media/imgs/holiday-maslenica.png">
+                
+                <img class="active" id="button-back" src="media/imgs/button-back.png" onclick="backToStart();">
+            </div>
+        </div>
+        
+        <!-- Стартовая страница с элементами -->
+        <div class="container"> 
+            
+            <!-- Управление показом и скрытием элементов -->
+            <input type="checkbox" id="hide-wall">
+            <input type="checkbox" id="show-start-message">
+            
+            <input type="radio" name="hide-info-krestyanin" id="show-info-krestyanin">
+            <input type="radio" name="hide-info-krestyanin" id="hide-info-krestyanin" checked>
+            <input type="radio" name="hide-info-pryaha" id="show-info-pryaha">
+            <input type="radio" name="hide-info-pryaha" id="hide-info-pryaha" checked>
+            <input type="radio" name="hide-info-lodochnik" id="show-info-lodochnik">
+            <input type="radio" name="hide-info-lodochnik" id="hide-info-lodochnik" checked>
+            
+            <div id="start-page">
+                <img src="media/imgs/start-wall.png">
+
+                <img id="header-img" src="media/imgs/header.png">
+
+                <label for="show-info-krestyanin" id="face-krestyanin" onclick="soundClick('select_player');"><img src="media/imgs/face-crestyanin.png"></label>
+                <label for="show-info-pryaha" id="face-pryaha" onclick="soundClick('select_player');"><img src="media/imgs/face-pryaha.png"></label>
+                <label for="show-info-lodochnik" id="face-lodochnik" onclick="soundClick('select_player');"><img src="media/imgs/face-lodochnik.png"></label>
+
+                <img id="info-krestyanin" src="media/imgs/info-krestyanin.png">
+                <img id="info-pryaha" src="media/imgs/info-pryaha.png">
+                <img id="info-lodochnik" src="media/imgs/info-lodochnik.png">
+                
+                <label for="show-start-message" id="button-select-krestyanin" onclick="soundClick('close_info'); selectPersone('krestyanin');"><img src="media/imgs/button-select.png"></label>
+                <label for="show-start-message" id="button-select-pryaha" onclick="soundClick('close_info'); selectPersone('pryaha');"><img src="media/imgs/button-select.png"></label>
+                <label for="show-start-message" id="button-select-lodochnik" onclick="soundClick('close_info'); selectPersone('lodochnik');"><img src="media/imgs/button-select.png"></label>
+
+                <label for="hide-info-krestyanin" id="button-close-krestyanin" onclick="soundClick('close_info');"><img src="media/imgs/close.png"></label>
+                <label for="hide-info-pryaha" id="button-close-pryaha" onclick="soundClick('close_info');"><img src="media/imgs/close.png"></label>
+                <label for="hide-info-lodochnik" id="button-close-lodochnik" onclick="soundClick('close_info');"><img src="media/imgs/close.png"></label>
+
+                <img id="start-wall-side" src="media/imgs/start-wall-side.png">
+                <img id="start-message" src="media/imgs/start-message.png">
+                <label for="hide-wall" id="button-start" onclick="calendar(); soundClick('wall_swipe');"><img src="media/imgs/button-start.png"></label>
+                <img id="finish" src="media/imgs/finish.png">
+            </div>
+        </div>
+
+        <audio id="background-audio" loop>
+            <source  src="media/sounds/background_soundscape.mp3" type="audio/mpeg">
+        </audio>
+        
+        <script src="script.js"></script>
+        <noscript>Без JS работать программа не будет!</noscript>
+    </body>
+</html>

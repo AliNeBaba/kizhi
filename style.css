@@ -1,0 +1,1293 @@
+@charset "utf-8";
+
+
+/* Общие стили */
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 1920px;
+    min-width: 1100px;
+    background-color: rgba(241, 228, 198, 1);
+    overflow: hidden;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100vh;
+}
+.container {
+    position: relative;
+}
+label,
+.active {
+    opacity: 1;
+}
+label:hover,
+.active:hover {
+    cursor: pointer;
+    opacity: .8;
+    transition: all .4s;
+}
+label:active,
+.active:active {
+    cursor: pointer;
+    opacity: .5;
+    transition: all .4s;
+}
+.pointer:hover{
+    cursor: pointer;
+}
+#start-page {
+    position: absolute;
+    left: 0;
+    transition: all 2s;
+}
+#main-page {
+    position: absolute;
+}
+input {
+    display: none;
+}
+
+
+/* Стили для стартовой страницы */
+
+#header-img {
+    position: absolute;
+    width: 70%;
+    top: 3.5%;
+    left: 15%;
+}
+#face-krestyanin {
+    position: absolute;
+    width: 20%;
+    top: 40%;
+    left: 10%;
+}
+#face-pryaha {
+    position: absolute;
+    width: 20%;
+    top: 40%;
+    left: 40%;
+}
+#face-lodochnik {
+    position: absolute;
+    width: 20%;
+    top: 40%;
+    left: 70%;
+}
+#info-krestyanin,
+#info-pryaha,
+#info-lodochnik {
+    position: absolute;
+    display: none;
+    width: 84%;
+    top: 35%;
+    left: 8%;
+}
+#button-select-krestyanin,
+#button-select-pryaha,
+#button-select-lodochnik {
+    position: absolute;
+    display: none;
+    width: 10%;
+    top: 80%;
+    left: 45%;
+}
+#button-close-krestyanin,
+#button-close-pryaha,
+#button-close-lodochnik {
+    position: absolute;
+    display: none;
+    width: 10%;
+    top: 40%;
+    left: 85%;
+}
+#start-wall-side {
+    position: absolute;
+    height: 99.5%;
+    right: -24%;
+}
+#start-message,
+#finish {
+    position: absolute;
+    display: none;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+}
+#button-start {
+    position: absolute;
+    display: none;
+    width: 10%;
+    top: 67%;
+    left: 45%;
+}
+
+
+/* Управление показом элементов стартовой страницы */
+
+#hide-wall:checked ~ #start-page > #start-wall-side {
+    display: inline-block;
+}
+#hide-wall:checked ~ #start-page {
+    left: -140%;
+    transition: all 2s;
+}
+#show-info-krestyanin:checked ~ #start-page > #info-krestyanin,
+#show-info-krestyanin:checked ~ #start-page > #button-select-krestyanin,
+#show-info-krestyanin:checked ~ #start-page > #button-close-krestyanin {
+    display: block;
+    transition: all .3s;
+}
+#show-info-pryaha:checked ~ #start-page > #info-pryaha,
+#show-info-pryaha:checked ~ #start-page > #button-select-pryaha,
+#show-info-pryaha:checked ~ #start-page > #button-close-pryaha {
+    display: block;
+    transition: all .3s;
+}
+#show-info-lodochnik:checked ~ #start-page > #info-lodochnik,
+#show-info-lodochnik:checked ~ #start-page > #button-select-lodochnik,
+#show-info-lodochnik:checked ~ #start-page > #button-close-lodochnik {
+    display: block;
+    transition: all .3s;
+}
+#show-start-message:checked ~ #start-page > #header-img,
+#show-start-message:checked ~ #start-page > #face-krestyanin,
+#show-start-message:checked ~ #start-page > #face-pryaha,
+#show-start-message:checked ~ #start-page > #face-lodochnik,
+#show-start-message:checked ~ #start-page > #info-krestyanin,
+#show-start-message:checked ~ #start-page > #info-pryaha,
+#show-start-message:checked ~ #start-page > #info-lodochnik,
+#show-start-message:checked ~ #start-page > #button-select-krestyanin,
+#show-start-message:checked ~ #start-page > #button-select-pryaha,
+#show-start-message:checked ~ #start-page > #button-select-lodochnik,
+#show-start-message:checked ~ #start-page > #button-close-krestyanin,
+#show-start-message:checked ~ #start-page > #button-close-pryaha,
+#show-start-message:checked ~ #start-page > #button-close-lodochnik {
+    display: none;
+}
+#show-start-message:checked ~ #start-page > #start-message,
+#show-start-message:checked ~ #start-page > #button-start {
+    display: block;
+    transition: all .3s;
+}
+
+
+/* Стили для основного игрового поля */
+
+/* Стили для календаря */
+#calendar-box {
+    position: absolute;
+    width: 40%;
+    top: -35%;
+    left: -20%;
+}
+#calendar {
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    transform: rotate(66deg);
+    transition-timing-function: linear;
+    transition-duration: 10s;
+    transition-property: all;
+}
+#calendar-strelka {
+    position: absolute;
+    width: 23%;
+    top: 49%;
+    left: 49%;
+}
+#spring-alena {
+    position: absolute;
+    width: 30%;
+    top: 64%;
+    right: 6%;
+    display: none;
+    transition: all .3s;
+}
+#spring-blagoveshenie {
+    position: absolute;
+    width: 30%;
+    top: 65%;
+    right: 7%;
+    display: none;
+}
+#spring-egory {
+    position: absolute;
+    width: 30%;
+    top: 64%;
+    right: 6%;
+    display: none;
+}
+#spring-eremey {
+    position: absolute;
+    width: 30%;
+    top: 63%;
+    right: 7%;
+    display: none;
+}
+#spring-nicola {
+    position: absolute;
+    width: 28%;
+    top: 57%;
+    right: 4%;
+    display: none;
+}
+#summer-ilyin-day {
+    position: absolute;
+    width: 28%;
+    top: 65%;
+    right: 6%;
+    display: none;
+}
+#summer-piter-day {
+    position: absolute;
+    width: 28%;
+    top: 65%;
+    right: 6%;
+    display: none;
+}
+#autumn-sdvizhenie {
+    position: absolute;
+    width: 26%;
+    top: 66%;
+    right: 6%;
+    display: none;
+}
+#autumn-spas {
+    position: absolute;
+    width: 30%;
+    top: 63%;
+    right: 6%;
+    display: none;
+}
+#autumn-uspenie {
+    position: absolute;
+    width: 25%;
+    top: 67%;
+    right: 6%;
+    display: none;
+}
+#winter-filipov-day {
+    position: absolute;
+    width: 30%;
+    top: 62%;
+    right: 6%;
+    display: none;
+}
+#winter-kreshenie {
+    position: absolute;
+    width: 26%;
+    top: 67%;
+    right: 6%;
+    display: none;
+}
+#winter-maslenica {
+    position: absolute;
+    width: 30%;
+    top: 64%;
+    right: 6%;
+    display: none;
+}
+#winter-mikhailov-day {
+    position: absolute;
+    width: 30%;
+    top: 64%;
+    right: 6%;
+    display: none;
+}
+#winter-paskha {
+    position: absolute;
+    width: 22%;
+    top: 70%;
+    right: 7%;
+    display: none;
+}
+#winter-pokrov {
+    position: absolute;
+    width: 21%;
+    top: 70%;
+    right: 9%;
+    display: none;
+}
+#winter-rozhdestvo {
+    position: absolute;
+    width: 27%;
+    top: 64%;
+    right: 6%;
+    display: none;
+}
+#holiday-alena {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-blagoveschanie {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-egory {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-eremey {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-nikola {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-ilyin-day {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-piter-day {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-sdvizhenie {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-spas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-uspenie {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-filipov-day {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-kreschenie {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-maslenica {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-mikhailov-day {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-paskha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-pokrov {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#holiday-rozhdestvo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+/* Стили элементов интерфейса персонажей */
+#interface-krestyanin {
+    position: absolute;
+    display: none;
+    width: 70%;
+    bottom: 0;
+    left: 0;
+}
+#interface-pryaha {
+    position: absolute;
+    display: none;
+    width: 90%;
+    bottom: 0;
+    left: 0;
+}
+#interface-lodochnik {
+    position: absolute;
+    display: none;
+    width: 70%;
+    bottom: 0;
+    left: 0;
+}
+#krestyanin-name-soha {
+    position: absolute;
+    width: 8%;
+    left: 21%;
+    bottom: 32%;
+}
+#krestyanin-name-borona {
+    position: absolute;
+    width: 8%;
+    left: 33%;
+    bottom: 30%;
+}
+#krestyanin-name-sevalka {
+    position: absolute;
+    width: 8%;
+    left: 44%;
+    bottom: 33%;
+}
+#krestyanin-name-coporuga {
+    position: absolute;
+    width: 9%;
+    left: 55%;
+    bottom: 31%;
+}
+#krestyanin-name-gorbusha {
+    position: absolute;
+    width: 9%;
+    left: 66%;
+    bottom: 30%;
+}
+#krestyanin-name-vily {
+    position: absolute;
+    width: 9%;
+    left: 78%;
+    bottom: 30%;
+}
+#krestyanin-name-cep {
+    position: absolute;
+    width: 8%;
+    left: 90%;
+    bottom: 30%;
+}
+#krestyanin-img-soha {
+    position: absolute;
+    width: 8%;
+    left: 21%;
+    bottom: 32%;
+    display: none;
+}
+#krestyanin-img-borona {
+    position: absolute;
+    width: 8%;
+    left: 33%;
+    bottom: 27%;
+    display: none;
+}
+#krestyanin-img-sevalka {
+    position: absolute;
+    width: 6%;
+    left: 45%;
+    bottom: 25%;
+    display: none;
+}
+#krestyanin-img-coporuga {
+    position: absolute;
+    width: 7%;
+    left: 56%;
+    bottom: 29%;
+    display: none;
+}
+#krestyanin-img-gorbusha {
+    position: absolute;
+    width: 6%;
+    left: 69%;
+    bottom: 19%;
+    display: none;
+}
+#krestyanin-img-vily {
+    position: absolute;
+    width: 2%;
+    left: 82%;
+    bottom: 18%;
+    display: none;
+}
+#krestyanin-img-cep {
+    position: absolute;
+    width: 4%;
+    left: 92%;
+    bottom: 20%;
+    display: none;
+}
+#pryaha-name-cudel {
+    position: absolute;
+    width: 6%;
+    left: 17%;
+    bottom: 32%;
+}
+#pryaha-name-pryalka {
+    position: absolute;
+    width: 6%;
+    left: 26%;
+    bottom: 31%;
+}
+#pryaha-name-vereteno {
+    position: absolute;
+    width: 6%;
+    left: 34%;
+    bottom: 33%;
+}
+#pryaha-name-motoguz {
+    position: absolute;
+    width: 6%;
+    left: 42.5%;
+    bottom: 34%;
+}
+#pryaha-name-spica {
+    position: absolute;
+    width: 6%;
+    left: 50.5%;
+    bottom: 33%;
+}
+#pryaha-name-parus {
+    position: absolute;
+    width: 6%;
+    left: 59%;
+    bottom: 33%;
+}
+#pryaha-name-gorbusha {
+    position: absolute;
+    width: 7%;
+    left: 67%;
+    bottom: 31%;
+}
+#pryaha-name-serp {
+    position: absolute;
+    width: 6%;
+    left: 76%;
+    bottom: 32%;
+}
+#pryaha-name-lodka-ves {
+    position: absolute;
+    width: 6%;
+    left: 84.5%;
+    bottom: 30%;
+}
+#pryaha-name-grabli {
+    position: absolute;
+    width: 6%;
+    left: 93%;
+    bottom: 32%;
+}
+#pryaha-img-cudel {
+    position: absolute;
+    width: 5%;
+    left: 18%;
+    bottom: 25%;
+    display: none;
+}
+#pryaha-img-pryalka {
+    position: absolute;
+    width: 4%;
+    left: 27%;
+    bottom: 23.5%;
+    display: none;
+}
+#pryaha-img-vereteno {
+    position: absolute;
+    width: 2.5%;
+    left: 36%;
+    bottom: 23%;
+    display: none;
+}
+#pryaha-img-motoguz {
+    position: absolute;
+    width: 4%;
+    left: 43%;
+    bottom: 24%;
+    display: none;
+}
+#pryaha-img-spica {
+    position: absolute;
+    width: 3%;
+    left: 52%;
+    bottom: 19%;
+    display: none;
+}
+#pryaha-img-parus {
+    position: absolute;
+    width: 4.5%;
+    left: 60%;
+    bottom: 21%;
+    display: none;
+}
+#pryaha-img-gorbusha {
+    position: absolute;
+    width: 4%;
+    left: 69%;
+    bottom: 20%;
+    display: none;
+}
+#pryaha-img-serp {
+    position: absolute;
+    width: 4%;
+    left: 77%;
+    bottom: 19%;
+    display: none;
+}
+#pryaha-img-lodka {
+    position: absolute;
+    width: 5.5%;
+    left: 85%;
+    bottom: 26%;
+    display: none;
+}
+#pryaha-img-cow {
+    position: absolute;
+    width: 5.5%;
+    left: 85%;
+    bottom: 29%;
+    display: none;
+}
+#pryaha-img-grabli {
+    position: absolute;
+    width: 3%;
+    left: 94%;
+    bottom: 19%;
+    display: none;
+}
+#lodochnik-name-pila {
+    position: absolute;
+    width: 8%;
+    left: 23%;
+    bottom: 32%;
+}
+#lodochnik-name-topor {
+    position: absolute;
+    width: 8%;
+    left: 34%;
+    bottom: 30%;
+}
+#lodochnik-name-rubanok {
+    position: absolute;
+    width: 8%;
+    left: 45%;
+    bottom: 33%;
+}
+#lodochnik-name-stameska {
+    position: absolute;
+    width: 8%;
+    left: 56%;
+    bottom: 34%;
+}
+#lodochnik-name-lodka {
+    position: absolute;
+    width: 8%;
+    left: 67%;
+    bottom: 31%;
+}
+#lodochnik-name-yakor {
+    position: absolute;
+    width: 8%;
+    left: 78%;
+    bottom: 30%;
+}
+#lodochnik-name-vesla {
+    position: absolute;
+    width: 7%;
+    left: 90%;
+    bottom: 31%;
+}
+#lodochnik-img-pila {
+    position: absolute;
+    width: 7%;
+    left: 23.5%;
+    bottom: 25%;
+    display: none;
+}
+#lodochnik-img-topor {
+    position: absolute;
+    width: 8%;
+    left: 34%;
+    bottom: 25%;
+    display: none;
+}
+#lodochnik-img-rubanok {
+    position: absolute;
+    width: 7%;
+    left: 45%;
+    bottom: 29%;
+    display: none;
+}
+#lodochnik-img-stameska {
+    position: absolute;
+    width: 7%;
+    left: 56%;
+    bottom: 25%;
+    display: none;
+}
+#lodochnik-img-lodka {
+    position: absolute;
+    width: 8%;
+    left: 67%;
+    bottom: 31%;
+    display: none;
+}
+#lodochnik-img-yakor {
+    position: absolute;
+    width: 8%;
+    left: 78%;
+    bottom: 22%;
+    display: none;
+}
+#lodochnik-img-vesla {
+    position: absolute;
+    width: 3%;
+    left: 92%;
+    bottom: 19%;
+    display: none;
+}
+
+/* Элементы игрового поля */
+#button-back {
+    position: absolute;
+    width: 5%;
+    top: 1%;
+    right: .7%;
+}
+#title-soha,
+#title-borona,
+#title-sevalka,
+#title-coporuga,
+#title-gorbusha,
+#title-vily,
+#title-cep,
+#title-cudel,
+#title-pryalka,
+#title-vereteno,
+#title-motoguz,
+#title-spica,
+#title-parus,
+#title-serp,
+#title-grabli,
+#title-pila,
+#title-topor,
+#title-rubanok,
+#title-stameska,
+#title-lodka,
+#title-yakor,
+#title-vesla,
+#title-cow {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+}
+@keyframes background-true {
+    50% {
+        opacity: .6;
+        background-color: rgba(124, 252, 0, .8);
+    }
+}
+@keyframes background-false {
+    50% {
+        opacity: .6;
+        background-color: rgba(240, 128, 128, .8);
+    }
+}
+#img-soha {
+    position: absolute;
+    width: 5%;
+    left: 56%;
+    top: 30%;
+}
+#img-borona {
+    position: absolute;
+    width: 12%;
+    left: 88%;
+    top: 73%;
+}
+#img-sevalka {
+    position: absolute;
+    width: 2.5%;
+    left: 23.5%;
+    top: 52%;
+}
+#img-coporuga {
+    position: absolute;
+    width: 4%;
+    left: 76%;
+    top: 75%;
+}
+#img-gorbusha {
+    position: absolute;
+    width: 6%;
+    left: 90.5%;
+    top: 60%;
+}
+#img-vily {
+    position: absolute;
+    width: 2%;
+    left: 31%;
+    top: 58%;
+}
+#img-cep {
+    position: absolute;
+    width: 2.5%;
+    left: 23%;
+    top: 43%;
+}
+#img-cudel {
+    position: absolute;
+    width: 3%;
+    left: 83%;
+    top: 44%;
+}
+#img-pryalka {
+    position: absolute;
+    width: 3%;
+    left: 69%;
+    top: 45%;
+}
+#img-vereteno {
+    position: absolute;
+    width: 2%;
+    left: 72%;
+    top: 23%;
+}
+#img-motoguz {
+    position: absolute;
+    width: 2%;
+    left: 79%;
+    top: 45.5%;
+}
+#img-spica {
+    position: absolute;
+    width: 1%;
+    left: 81%;
+    top: 42.5%;
+}
+#img-parus {
+    position: absolute;
+    width: 5%;
+    left: 41%;
+    top: 45%;
+}
+#img-serp {
+    position: absolute;
+    width: 2%;
+    left: 21%;
+    top: 45%;
+}
+#img-grabli {
+    position: absolute;
+    width: 4%;
+    left: 7%;
+    top: 60%;
+}
+#img-pila {
+    position: absolute;
+    width: 6%;
+    left: 30%;
+    top: 37%;
+    transform: rotate(17deg);
+}
+#img-topor {
+    position: absolute;
+    width: 5%;
+    left: 34%;
+    top: 44%;
+}
+#img-rubanok {
+    position: absolute;
+    width: 4%;
+    left: 31%;
+    top: 52%;
+}
+#img-stameska {
+    position: absolute;
+    width: 3%;
+    left: 30%;
+    top: 46%;
+    transform: rotate(35deg);
+}
+#img-lodka {
+    position: absolute;
+    width: 14%;
+    left: 60%;
+    top: 75%;
+}
+#img-yakor {
+    position: absolute;
+    width: 5%;
+    left: 1%;
+    top: 71%;
+}
+#img-vesla {
+    position: absolute;
+    width: 3%;
+    left: 39%;
+    top: 42%;
+}
+#img-cow {
+    position: absolute;
+    width: 9%;
+    left: 35%;
+    top: 59%;
+}
+#title-soha {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-borona {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-sevalka {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-coporuga {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-gorbusha {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-vily {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-cep {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-cudel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-pryalka {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-vereteno {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-motoguz {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-spica {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-parus {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-serp {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-grabli {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-pila {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-topor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-rubanok {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-stameska {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-lodka {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-lodka-ves {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-yakor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-vesla {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#title-cow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#star-soha,
+#star-borona,
+#star-sevalka,
+#star-coporuga,
+#star-gorbusha,
+#star-vily,
+#star-cep,
+#star-cudel,
+#star-pryalka,
+#star-vereteno,
+#star-motoguz,
+#star-spica,
+#star-parus,
+#star-serp,
+#star-grabli,
+#star-pila,
+#star-topor,
+#star-rubanok,
+#star-stameska,
+#star-lodka,
+#star-yakor,
+#star-vesla,
+#star-cow {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    background-image: url('media/imgs/sprite-flash.png');
+    background-size: 3000%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    animation-name: star-shine;
+    animation-timing-function: steps(24);
+    animation-iteration-count: infinite;
+    
+}
+@keyframes star-shine {
+    0% {
+        background-position-x: 0.7%;
+        width: 10%;
+        height: 15%;
+    }
+    10% {
+        background-position-x: 100%;
+        width: 10%;
+        height: 15%;
+    }
+    11% {
+        width: 0%;
+        height: 0%;
+        background-position-x: 100%;
+    }
+    100% {
+        width: 0%;
+        height: 0%;
+        background-position-x: 100%;
+    }
+    
+}
+#star-soha {
+    left: 50%;
+    top: 25%;
+    animation-delay: 3s;
+    animation-duration: 10s;
+}
+#star-borona {
+    left: 85%;
+    top: 71%;
+    animation-delay: 5s;
+    animation-duration: 11.1s;
+}
+#star-sevalka {
+    animation-delay: 7s;
+    animation-duration: 12.2s;
+    left: 18%;
+    top: 47%;
+}
+#star-coporuga {
+    animation-delay: 7.5s;
+    animation-duration: 12.9s;
+    left: 70%;
+    top: 71%;
+}
+#star-gorbusha {
+    animation-delay: 8.1s;
+    animation-duration: 13.3s;
+    left: 85%;
+    top: 63%;
+}
+#star-vily {
+    animation-delay: 8.3s;
+    animation-duration: 14s;
+    left: 25%;
+    top: 58%;
+}
+#star-cep {
+    animation-delay: 9.1s;
+    animation-duration: 14.4s;
+    left: 18%;
+    top: 40%;
+}
+#star-cudel {
+    animation-delay: 9.5s;
+    animation-duration: 14.5s;
+    left: 78%;
+    top: 39%;
+}
+#star-pryalka {
+    animation-delay: 10s;
+    animation-duration: 14.9s;
+    left: 62.5%;
+    top: 42%;
+}
+#star-vereteno {
+    animation-delay: 10.9s;
+    animation-duration: 15.2s;
+    left: 66%;
+    top: 20%;
+}
+#star-motoguz {
+    animation-delay: 11.3s;
+    animation-duration: 15.8s;
+    left: 73%;
+    top: 41%;
+}
+#star-spica {
+    animation-delay: 11.4s;
+    animation-duration: 16s;
+    left: 74.5%;
+    top: 37%;
+}
+#star-parus {
+    animation-delay: 11.7s;
+    animation-duration: 16.3s;
+    left: 36%;
+    top: 45%;
+}
+#star-serp {
+    animation-delay: 12.2s;
+    animation-duration: 16.9s;
+    left: 14%;
+    top: 39%;
+}
+#star-grabli {
+    animation-delay: 12.5s;
+    animation-duration: 17s;
+    left: 3%;
+    top: 58%;
+}
+#star-pila {
+    animation-delay: 13s;
+    animation-duration: 17.6s;
+    left: 26%;
+    top: 35%;
+}
+#star-topor {
+    animation-delay: 13.5s;
+    animation-duration: 17.9s;
+    left: 28%;
+    top: 39%;
+}
+#star-rubanok {
+    animation-delay: 14.1s;
+    animation-duration: 18s;
+    left: 26%;
+    top: 48%;
+}
+#star-stameska {
+    animation-delay: 14.2s;
+    animation-duration: 18s;
+    left: 24%;
+    top: 42%;
+}
+#star-lodka {
+    animation-delay: 14.9s;
+    animation-duration: 18.5s;
+    left: 60%;
+    top: 73%;
+}
+#star-yakor {
+    animation-delay: 15.5s;
+    animation-duration: 19s;
+    left: -3%;
+    top: 68%;
+}
+#star-vesla {
+    animation-delay: 15.9s;
+    animation-duration: 19.6s;
+    left: 33%;
+    top: 45%;
+}
+#star-cow {
+    animation-delay: 16s;
+    animation-duration: 20s;
+    left: 32%;
+    top: 59%;
+}
